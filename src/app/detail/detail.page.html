@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-title>Weather Detail</ion-title>
+
+        <ion-buttons slot="start">
+        	<ion-back-button>
+          </ion-back-button>
+        </ion-buttons>
+ 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-card>
+		<img src="http://openweathermap.org/img/wn/{{weather.weather[0].icon}}@2x.png"/>
+		<ion-card-header>
+			<ion-card-subtitle>{{weather.dt * 1000 | date:'medium'}}</ion-card-subtitle>
+			<ion-card-title>{{weather.weather[0].main}}</ion-card-title>
+		</ion-card-header>
+		<ion-card-content>
+			<p>{{weather.pressure}}</p>
+			<p>{{weather.humidity}}</p>
+			<p>{{weather.temp.day - 273.15 | number}}</p>
+			<p>{{weather.temp.night - 273.15 | number}}</p>
+			<p>{{weather.sunrise * 1000 | date:'medium'}}</p>
+			<p>{{weather.sunset * 1000 | date:'medium'}}</p>
+		</ion-card-content>
+	</ion-card>
+
+</ion-content>
